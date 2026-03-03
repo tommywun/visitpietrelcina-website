@@ -312,7 +312,7 @@ button.menu-toggle {
 }
 
 /* ---------- Buttons ---------- */
-button,
+.entry-content button,
 input[type="button"],
 input[type="submit"],
 a.button,
@@ -331,7 +331,7 @@ a.wp-block-button__link {
     box-shadow: none !important;
 }
 
-button:hover,
+.entry-content button:hover,
 input[type="button"]:hover,
 input[type="submit"]:hover,
 a.button:hover,
@@ -441,6 +441,120 @@ input:focus, textarea:focus {
 .page-numbers.current {
     background: var(--vp-heading) !important;
     color: #fff !important;
+}
+
+/* ---------- Church / Mass Times Sections ---------- */
+.vp-church-section {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+
+.vp-church-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.vp-church-section h2 {
+    margin-top: 0 !important;
+    margin-bottom: 0.8rem !important;
+}
+
+.vp-church-section h3 {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    color: var(--vp-secondary) !important;
+    margin-top: 1.2rem !important;
+    margin-bottom: 0.3rem !important;
+}
+
+.vp-church-img {
+    float: right;
+    margin: 0 0 1rem 1.5rem;
+    max-width: 280px;
+}
+
+.vp-church-img img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--vp-radius);
+}
+
+.vp-church-img figcaption {
+    font-size: 0.78rem;
+    color: var(--vp-muted);
+    text-align: center;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+.vp-mass-list {
+    list-style: none;
+    padding: 0;
+    margin: 0.3rem 0 0.8rem;
+}
+
+.vp-mass-list li {
+    padding: 0.2rem 0;
+    font-size: 0.92rem;
+}
+
+.vp-mass-list li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--vp-accent);
+    margin-right: 0.6rem;
+    vertical-align: middle;
+}
+
+.vp-contact {
+    font-size: 0.88rem;
+    color: #666;
+}
+
+.vp-address {
+    font-size: 0.88rem;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.vp-ext-link {
+    display: block;
+    max-width: 300px;
+    text-align: center;
+}
+
+.vp-ext-link img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--vp-radius);
+    transition: opacity 0.2s;
+}
+
+.vp-ext-link:hover img {
+    opacity: 0.85;
+}
+
+.vp-ext-link span {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+@media (max-width: 600px) {
+    .vp-church-img {
+        float: none;
+        margin: 0 0 1rem 0;
+        max-width: 100%;
+    }
 }
 
 /* ---------- Utility ---------- */
