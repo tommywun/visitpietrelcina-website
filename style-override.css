@@ -1,0 +1,506 @@
+/* ==========================================================================
+   Visit Pietrelcina - Design Refresh
+   Clean, bright, elegant magazine feel with feminine warmth
+   ========================================================================== */
+
+/* ---------- CSS Variables ---------- */
+:root {
+    --vp-bg: #FAFAF8;
+    --vp-text: #2D2D2D;
+    --vp-accent: #C8A27A;
+    --vp-accent-hover: #B08D65;
+    --vp-secondary: #5B7B6F;
+    --vp-heading: #1A1A2E;
+    --vp-light: #F5F0EB;
+    --vp-border: #E8E2DA;
+    --vp-nav-bg: rgba(255, 255, 255, 0.97);
+    --vp-footer-bg: #1A1A2E;
+    --vp-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    --vp-radius: 6px;
+    --vp-max-width: 1100px;
+}
+
+/* ---------- Base Reset & Body ---------- */
+body {
+    background-color: var(--vp-bg) !important;
+    color: var(--vp-text) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    line-height: 1.7 !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography ---------- */
+h1, h2, h3, h4, h5, h6,
+.entry-title,
+.main-title {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif !important;
+    color: var(--vp-heading) !important;
+    font-weight: 600 !important;
+    line-height: 1.3 !important;
+    letter-spacing: -0.01em;
+}
+
+h1, .entry-title { font-size: 2.5rem !important; }
+h2 { font-size: 1.9rem !important; }
+h3 { font-size: 1.4rem !important; }
+h4 { font-size: 1.15rem !important; }
+
+@media (max-width: 768px) {
+    h1, .entry-title { font-size: 1.8rem !important; }
+    h2 { font-size: 1.5rem !important; }
+    h3 { font-size: 1.2rem !important; }
+}
+
+a {
+    color: var(--vp-accent) !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease !important;
+}
+
+a:hover, a:focus, a:active {
+    color: var(--vp-secondary) !important;
+}
+
+p {
+    margin-bottom: 1.4em;
+    font-size: 1.02rem;
+}
+
+blockquote {
+    border-left: 3px solid var(--vp-accent) !important;
+    padding: 1.2em 1.5em !important;
+    margin: 2em 0 !important;
+    background: var(--vp-light) !important;
+    border-radius: 0 var(--vp-radius) var(--vp-radius) 0 !important;
+    font-style: italic;
+    color: #4A4A5A !important;
+}
+
+/* ---------- Hero Section (Homepage Only) ---------- */
+.home .site-header {
+    display: block !important;
+    background: url('hero-pietrelcina.jpg') center center / cover no-repeat !important;
+    position: relative !important;
+    height: 70vh !important;
+    min-height: 400px !important;
+    max-height: 600px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+.home .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(26, 26, 46, 0.15) 0%,
+        rgba(26, 26, 46, 0.35) 50%,
+        rgba(26, 26, 46, 0.65) 100%
+    );
+    z-index: 1;
+}
+
+.home .site-header .inside-header {
+    position: relative;
+    z-index: 2;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: center !important;
+    height: 100% !important;
+    padding-bottom: 3rem !important;
+    max-width: var(--vp-max-width);
+    margin: 0 auto;
+}
+
+.home .site-header .site-logo,
+.home .site-header .site-branding {
+    display: none !important;
+}
+
+/* Hero title overlay - use the navigation branding title */
+.home .site-header .main-title a {
+    color: #ffffff !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 700 !important;
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.3) !important;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+    .home .site-header {
+        height: 50vh !important;
+        min-height: 300px !important;
+    }
+    .home .site-header .main-title a {
+        font-size: 2.2rem !important;
+    }
+}
+
+/* Non-homepage header - subtle accent bar */
+body:not(.home) .site-header {
+    display: block !important;
+    background: var(--vp-heading) !important;
+    padding: 1rem 0 !important;
+    height: auto !important;
+}
+
+body:not(.home) .site-header .inside-header {
+    max-width: var(--vp-max-width);
+    margin: 0 auto;
+    padding: 0.5rem 1rem !important;
+}
+
+body:not(.home) .site-header .main-title a {
+    color: #ffffff !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.8rem !important;
+    font-weight: 600 !important;
+}
+
+body:not(.home) .generate-page-header,
+body:not(.home) .page-header-image,
+body:not(.home) .page-header-image-single {
+    display: none !important;
+}
+
+/* ---------- Navigation ---------- */
+.main-navigation {
+    background-color: var(--vp-nav-bg) !important;
+    box-shadow: var(--vp-shadow) !important;
+    border-bottom: 1px solid var(--vp-border) !important;
+}
+
+.main-navigation .main-nav ul li a,
+.main-navigation .menu-toggle,
+.main-navigation .mobile-bar-items a {
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.82rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--vp-heading) !important;
+    padding: 0 1rem !important;
+    line-height: 52px !important;
+    transition: color 0.25s ease, background-color 0.25s ease !important;
+}
+
+.main-navigation .main-nav ul li:hover > a,
+.main-navigation .main-nav ul li.sfHover > a,
+.main-navigation .main-nav ul li:focus > a {
+    color: var(--vp-accent) !important;
+    background-color: transparent !important;
+}
+
+.main-navigation .main-nav ul li[class*="current-menu-"] > a {
+    color: var(--vp-accent) !important;
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--vp-accent) !important;
+}
+
+/* Dropdown menus */
+.main-navigation .main-nav ul ul {
+    background-color: #ffffff !important;
+    border: 1px solid var(--vp-border) !important;
+    border-radius: var(--vp-radius) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1) !important;
+    padding: 0.5rem 0 !important;
+}
+
+.main-navigation .main-nav ul ul li a {
+    color: var(--vp-text) !important;
+    font-size: 0.8rem !important;
+    line-height: 1.6 !important;
+    padding: 0.5rem 1.2rem !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+.main-navigation .main-nav ul ul li:hover > a,
+.main-navigation .main-nav ul ul li.sfHover > a {
+    color: var(--vp-accent) !important;
+    background-color: var(--vp-light) !important;
+}
+
+/* Mobile navigation */
+.mobile-header-navigation {
+    background-color: var(--vp-nav-bg) !important;
+    box-shadow: var(--vp-shadow) !important;
+}
+
+.mobile-header-navigation .main-title a {
+    color: var(--vp-heading) !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-weight: 600 !important;
+}
+
+button.menu-toggle {
+    color: var(--vp-heading) !important;
+    background: transparent !important;
+}
+
+/* Slideout mobile menu */
+.slideout-navigation {
+    background-color: #ffffff !important;
+}
+
+.slideout-navigation .main-nav ul li a {
+    color: var(--vp-heading) !important;
+    font-family: 'Inter', sans-serif !important;
+    border-bottom: 1px solid var(--vp-border) !important;
+    padding: 0.9rem 1.5rem !important;
+}
+
+.slideout-navigation .main-nav ul li a:hover {
+    color: var(--vp-accent) !important;
+    background-color: var(--vp-light) !important;
+}
+
+/* ---------- Main Content Area ---------- */
+.site-content {
+    padding-top: 2rem !important;
+}
+
+.separate-containers .inside-article,
+.one-container .site-content {
+    background-color: #ffffff !important;
+    border-radius: var(--vp-radius) !important;
+    padding: 2.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .separate-containers .inside-article,
+    .one-container .site-content {
+        padding: 1.5rem !important;
+    }
+}
+
+.entry-content {
+    font-size: 1.02rem !important;
+    line-height: 1.8 !important;
+}
+
+/* ---------- Images ---------- */
+.entry-content img,
+.wp-post-image {
+    border-radius: var(--vp-radius) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    transition: box-shadow 0.3s ease !important;
+}
+
+.entry-content img:hover {
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Gallery images */
+.gallery-item img,
+.wp-block-gallery img {
+    border-radius: var(--vp-radius) !important;
+}
+
+/* ---------- YouTube Video Embeds ---------- */
+.embed-youtube,
+.wp-block-embed__wrapper {
+    position: relative;
+    border-radius: var(--vp-radius) !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1) !important;
+    margin: 2rem auto !important;
+    max-width: 800px !important;
+}
+
+.embed-youtube iframe,
+.wp-block-embed__wrapper iframe {
+    border-radius: var(--vp-radius) !important;
+}
+
+/* ---------- Section Dividers ---------- */
+.entry-content h2 {
+    margin-top: 3rem !important;
+    margin-bottom: 1.2rem !important;
+    padding-bottom: 0.6rem !important;
+    border-bottom: 2px solid var(--vp-light) !important;
+}
+
+.entry-content h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--vp-accent);
+    margin-top: 0.6rem;
+}
+
+/* ---------- Buttons & Links ---------- */
+button,
+input[type="button"],
+input[type="submit"],
+a.button,
+a.wp-block-button__link {
+    background-color: var(--vp-accent) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 50px !important;
+    font-family: 'Inter', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 0.88rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.06em !important;
+    padding: 0.7em 2em !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 2px 10px rgba(200, 162, 122, 0.3) !important;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover,
+a.button:hover,
+a.wp-block-button__link:hover {
+    background-color: var(--vp-secondary) !important;
+    box-shadow: 0 4px 15px rgba(91, 123, 111, 0.3) !important;
+    transform: translateY(-1px);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+    margin-top: 3rem !important;
+}
+
+.site-info {
+    background-color: var(--vp-footer-bg) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    padding: 2.5rem 1rem !important;
+    font-size: 0.9rem !important;
+}
+
+.site-info a {
+    color: var(--vp-accent) !important;
+}
+
+.site-info a:hover {
+    color: #ffffff !important;
+}
+
+.footer-widgets {
+    background-color: var(--vp-light) !important;
+    padding: 3rem 2rem !important;
+    border-top: 1px solid var(--vp-border) !important;
+}
+
+.footer-widgets .widget-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    color: var(--vp-heading) !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* ---------- Back to Top Button ---------- */
+a.generate-back-to-top {
+    background-color: var(--vp-accent) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    width: 44px !important;
+    height: 44px !important;
+    line-height: 44px !important;
+    font-size: 18px !important;
+    box-shadow: 0 3px 12px rgba(200, 162, 122, 0.35) !important;
+    transition: all 0.3s ease !important;
+}
+
+a.generate-back-to-top:hover {
+    background-color: var(--vp-secondary) !important;
+    box-shadow: 0 4px 16px rgba(91, 123, 111, 0.4) !important;
+    transform: translateY(-2px);
+}
+
+/* ---------- Widget Styling ---------- */
+.sidebar .widget,
+.footer-widgets .widget {
+    background: #ffffff !important;
+    border-radius: var(--vp-radius) !important;
+    padding: 1.5rem !important;
+    box-shadow: var(--vp-shadow) !important;
+}
+
+.widget-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1rem !important;
+    color: var(--vp-heading) !important;
+    border-bottom: 2px solid var(--vp-light) !important;
+    padding-bottom: 0.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+/* ---------- Entry Meta ---------- */
+.entry-meta {
+    color: #8A8A9A !important;
+    font-size: 0.85rem !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.entry-meta a {
+    color: var(--vp-accent) !important;
+}
+
+/* ---------- Forms ---------- */
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea,
+select {
+    border: 1px solid var(--vp-border) !important;
+    border-radius: var(--vp-radius) !important;
+    padding: 0.7em 1em !important;
+    font-family: 'Inter', sans-serif !important;
+    background-color: #ffffff !important;
+    transition: border-color 0.25s ease !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="search"]:focus,
+textarea:focus {
+    border-color: var(--vp-accent) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(200, 162, 122, 0.15) !important;
+}
+
+/* ---------- Top Bar (if visible) ---------- */
+.top-bar {
+    background-color: var(--vp-heading) !important;
+    font-size: 0.8rem !important;
+}
+
+/* ---------- Pagination ---------- */
+.paging-navigation a,
+.page-numbers {
+    border-radius: var(--vp-radius) !important;
+    padding: 0.4em 0.9em !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 0.88rem !important;
+}
+
+.paging-navigation .current,
+.page-numbers.current {
+    background-color: var(--vp-accent) !important;
+    color: #ffffff !important;
+}
+
+/* ---------- Smooth Transitions ---------- */
+* {
+    scroll-behavior: smooth;
+}
+
+/* ---------- Print Styles ---------- */
+@media print {
+    .main-navigation,
+    .site-footer,
+    .generate-back-to-top,
+    .slideout-navigation {
+        display: none !important;
+    }
+}
