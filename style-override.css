@@ -671,15 +671,21 @@ input:focus, textarea:focus {
 
 /* ---------- Travel Page Images ---------- */
 .vp-travel-img {
+    margin: 0 0 1rem 0;
+    max-width: 300px;
+}
+
+.vp-travel-img-right {
     float: right;
     margin: 0.2rem 0 1rem 1.5rem;
-    max-width: 300px;
+    clear: right;
 }
 
 .vp-travel-img img {
     width: 100%;
     height: auto;
     border-radius: var(--vp-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .vp-travel-img figcaption {
@@ -690,11 +696,32 @@ input:focus, textarea:focus {
     font-style: italic;
 }
 
+/* Naples photo: constrain height to roughly match its paragraph */
+.vp-travel-img-naples {
+    max-width: 200px;
+}
+.vp-travel-img-naples img {
+    max-height: 260px;
+    object-fit: cover;
+}
+
+/* Map in intro: allow slightly wider */
+.vp-travel-img:first-child {
+    max-width: 320px;
+}
+
 @media (max-width: 600px) {
-    .vp-travel-img {
+    .vp-travel-img,
+    .vp-travel-img-right {
         float: none;
-        margin: 0 0 1rem 0;
+        margin: 0 auto 1rem auto;
         max-width: 100%;
+    }
+    .vp-travel-img-naples {
+        max-width: 100%;
+    }
+    .vp-travel-img-naples img {
+        max-height: none;
     }
     .site-main > article > .inside-article > .entry-content img {
         float: none !important;
