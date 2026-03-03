@@ -715,6 +715,8 @@ input:focus, textarea:focus {
 .vp-travel-map {
     margin: 1rem 0 2rem 0;
     max-width: 100%;
+    width: 100%;
+    display: block;
 }
 .vp-travel-map img {
     width: 100%;
