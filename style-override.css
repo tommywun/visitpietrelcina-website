@@ -713,14 +713,17 @@ input:focus, textarea:focus {
 
 /* Full-width map below intro */
 .vp-travel-map {
-    margin: 1rem 0 2rem 0;
-    max-width: 100%;
-    width: 100%;
-    display: block;
+    margin: 1rem 0 2rem 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    display: block !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
 }
 .vp-travel-map img {
-    width: 100%;
-    height: auto;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
     border-radius: var(--vp-radius);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
