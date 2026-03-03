@@ -557,6 +557,202 @@ input:focus, textarea:focus {
     }
 }
 
+/* ---------- Blog Listing ---------- */
+.site-main > article {
+    padding-bottom: 2rem !important;
+    margin-bottom: 2rem !important;
+    border-bottom: 1px solid #eee !important;
+}
+
+.site-main > article:last-of-type {
+    border-bottom: none !important;
+}
+
+/* Sticky post highlight */
+.site-main > article.sticky {
+    border-bottom: 2px solid var(--vp-accent) !important;
+}
+
+/* Post title */
+.site-main > article .entry-title {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.4rem !important;
+}
+
+.site-main > article .entry-title a {
+    color: var(--vp-heading) !important;
+    transition: color 0.2s !important;
+}
+
+.site-main > article .entry-title a:hover {
+    color: var(--vp-accent) !important;
+}
+
+/* Featured image in blog listing */
+.site-main > article .post-image {
+    margin-bottom: 1rem !important;
+    overflow: hidden;
+    border-radius: var(--vp-radius);
+}
+
+.site-main > article .post-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 350px !important;
+    object-fit: cover !important;
+    border-radius: var(--vp-radius) !important;
+}
+
+/* Entry content in blog listing */
+.site-main > article > .inside-article > .entry-content {
+    font-size: 0.9rem !important;
+    color: #555 !important;
+    line-height: 1.6 !important;
+    max-height: none !important;
+}
+
+.site-main > article > .inside-article > .entry-content p {
+    margin-bottom: 0.6em !important;
+}
+
+/* Blog listing images (inline in excerpts) */
+.site-main > article > .inside-article > .entry-content img {
+    max-width: 200px !important;
+    height: auto !important;
+    float: right !important;
+    margin: 0 0 0.8rem 1rem !important;
+    border-radius: var(--vp-radius) !important;
+}
+
+/* Entry meta (categories/tags) */
+.site-main > article .entry-meta {
+    margin-top: 0.8rem !important;
+    padding-top: 0.6rem !important;
+    font-size: 0.75rem !important;
+    color: var(--vp-muted) !important;
+}
+
+.site-main > article .entry-meta .cat-links a,
+.site-main > article .entry-meta .tags-links a {
+    display: inline-block;
+    background: #f3f0ec !important;
+    color: var(--vp-accent) !important;
+    padding: 0.15em 0.5em !important;
+    border-radius: 3px !important;
+    font-size: 0.72rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.04em !important;
+    margin-right: 0.3em;
+}
+
+.site-main > article .entry-meta .cat-links a:hover,
+.site-main > article .entry-meta .tags-links a:hover {
+    background: var(--vp-accent) !important;
+    color: #fff !important;
+}
+
+.site-main > article .entry-meta .screen-reader-text {
+    display: none;
+}
+
+/* Pagination */
+.paging-navigation {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem !important;
+    border-top: 1px solid #eee !important;
+    text-align: center !important;
+}
+
+.paging-navigation .nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* ---------- Travel Page Images ---------- */
+.vp-travel-img {
+    float: right;
+    margin: 0.2rem 0 1rem 1.5rem;
+    max-width: 300px;
+}
+
+.vp-travel-img img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--vp-radius);
+}
+
+.vp-travel-img figcaption {
+    font-size: 0.75rem;
+    color: var(--vp-muted);
+    text-align: center;
+    margin-top: 0.3rem;
+    font-style: italic;
+}
+
+@media (max-width: 600px) {
+    .vp-travel-img {
+        float: none;
+        margin: 0 0 1rem 0;
+        max-width: 100%;
+    }
+    .site-main > article > .inside-article > .entry-content img {
+        float: none !important;
+        max-width: 100% !important;
+        margin: 0 0 0.8rem 0 !important;
+    }
+}
+
+/* ---------- Magazine Page ---------- */
+.vp-magazine-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.vp-magazine-card {
+    display: block;
+    padding: 1.2rem;
+    border: 1px solid #eee;
+    border-radius: var(--vp-radius);
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.vp-magazine-card:hover {
+    border-color: var(--vp-accent);
+    transform: translateY(-2px);
+}
+
+.vp-magazine-card h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin-bottom: 0.3rem !important;
+    text-transform: none !important;
+    letter-spacing: 0 !important;
+}
+
+.vp-magazine-card p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.vp-contact-block {
+    background: #faf8f5;
+    border-radius: var(--vp-radius);
+    padding: 1.2rem 1.5rem;
+    margin-top: 2rem;
+    border-left: 3px solid var(--vp-accent);
+}
+
+.vp-contact-block p {
+    margin-bottom: 0.4em;
+    font-size: 0.9rem;
+}
+
 /* ---------- Utility ---------- */
 * { scroll-behavior: smooth; }
 
