@@ -711,9 +711,23 @@ input:focus, textarea:focus {
     object-fit: cover;
 }
 
-/* Map in intro: allow slightly wider */
-.vp-travel-img:first-child {
-    max-width: 320px;
+/* Full-width map below intro */
+.vp-travel-map {
+    margin: 1rem 0 2rem 0;
+    max-width: 100%;
+}
+.vp-travel-map img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--vp-radius);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.vp-travel-map figcaption {
+    font-size: 0.75rem;
+    color: var(--vp-muted);
+    text-align: center;
+    margin-top: 0.3rem;
+    font-style: italic;
 }
 
 @media (max-width: 600px) {
