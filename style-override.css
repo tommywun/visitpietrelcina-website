@@ -681,6 +681,12 @@ input:focus, textarea:focus {
     clear: right;
 }
 
+.vp-travel-img-left {
+    float: left;
+    margin: 0.2rem 1.5rem 1rem 0;
+    clear: left;
+}
+
 .vp-travel-img img {
     width: 100%;
     height: auto;
@@ -712,7 +718,8 @@ input:focus, textarea:focus {
 
 @media (max-width: 600px) {
     .vp-travel-img,
-    .vp-travel-img-right {
+    .vp-travel-img-right,
+    .vp-travel-img-left {
         float: none;
         margin: 0 auto 1rem auto;
         max-width: 100%;
