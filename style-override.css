@@ -1704,7 +1704,7 @@ input:focus, textarea:focus {
 }
 
 /* ---- About Us page (page-id-471) ---- */
-.page-id-471 .entry-title {
+.page-id-471 .site-main article .entry-title {
     font-family: 'Playfair Display', Georgia, serif !important;
     text-align: center !important;
     font-size: 2.6rem !important;
