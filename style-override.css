@@ -199,6 +199,12 @@ body:not(.home) .page-header-image-single { display: none !important; }
     transition: color 0.2s !important;
 }
 
+/* Tighten dropdown arrow spacing */
+.main-navigation .main-nav ul li .dropdown-menu-toggle {
+    padding-right: 0.3rem !important;
+    padding-left: 0 !important;
+}
+
 .main-navigation .main-nav ul li:hover > a,
 .main-navigation .main-nav ul li.sfHover > a {
     color: var(--vp-accent) !important;
@@ -1202,13 +1208,16 @@ input:focus, textarea:focus {
    Magazine Editorial Layout
    ========================================================================== */
 
-/* Magazine page — full width, no sidebar */
-.page-id-22 .content-area {
+/* Magazine + Maps pages — full width, no sidebar */
+.page-id-22 .content-area,
+.page-id-27 .content-area {
     max-width: 1100px !important;
     width: 100% !important;
 }
-.page-id-22 #right-sidebar { display: none !important; }
-.page-id-22 #primary {
+.page-id-22 #right-sidebar,
+.page-id-27 #right-sidebar { display: none !important; }
+.page-id-22 #primary,
+.page-id-27 #primary {
     width: 100% !important;
     max-width: 100% !important;
 }
