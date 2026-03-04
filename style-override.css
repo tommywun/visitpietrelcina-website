@@ -712,12 +712,30 @@ input:focus, textarea:focus {
     display: none;
 }
 
-/* ---- Blog listing pages: full-width + card grid ---- */
-.blog .content-area {
+/* ---- Blog listing & category pages: full-width + card grid ---- */
+.blog .content-area,
+.archive .content-area,
+.category .content-area {
     width: 100% !important;
     max-width: 100% !important;
 }
-.blog #right-sidebar {
+.blog #right-sidebar,
+.archive #right-sidebar,
+.category #right-sidebar {
+    display: none !important;
+}
+/* Active category in nav */
+.vp-blog-nav a.vp-active {
+    background: var(--dot, var(--vp-accent)) !important;
+    border-color: var(--dot, var(--vp-accent)) !important;
+    color: #fff !important;
+}
+.vp-blog-nav a.vp-active::before {
+    background: #fff;
+}
+/* Hide page header on category archives */
+.archive .page-header-content,
+.category .page-header-content {
     display: none !important;
 }
 
