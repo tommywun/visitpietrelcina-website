@@ -199,10 +199,10 @@ body:not(.home) .page-header-image-single { display: none !important; }
     transition: color 0.2s !important;
 }
 
-/* Tighten dropdown arrow spacing */
+/* Dropdown arrow spacing */
 .main-navigation .main-nav ul li .dropdown-menu-toggle {
     padding-right: 0.3rem !important;
-    padding-left: 0 !important;
+    padding-left: 0.15rem !important;
 }
 
 .main-navigation .main-nav ul li:hover > a,
@@ -724,13 +724,20 @@ input:focus, textarea:focus {
 /* Blog header */
 .vp-blog-header {
     text-align: center;
-    padding: 1.5rem 0 0.5rem;
+    padding: 2rem 1rem 1.2rem;
     margin-bottom: 1.5rem;
     border-bottom: 1px solid #eee;
 }
+.vp-blog-header-icon {
+    width: 80px;
+    height: auto;
+    margin: 0 auto 0.8rem;
+    display: block;
+    opacity: 0.85;
+}
 .vp-blog-header h1 {
     font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 2rem !important;
+    font-size: 2.2rem !important;
     font-weight: 500 !important;
     color: var(--vp-heading) !important;
     margin: 0 0 0.3rem 0 !important;
@@ -739,14 +746,23 @@ input:focus, textarea:focus {
     font-size: 0.95rem;
     color: var(--vp-muted);
     font-style: italic;
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.2rem 0;
+}
+.vp-blog-header .vp-blog-toc-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--vp-muted);
+    margin: 0 0 0.6rem 0;
 }
 .vp-blog-nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
 }
 .vp-blog-nav a {
     display: inline-block;
@@ -765,6 +781,26 @@ input:focus, textarea:focus {
 .vp-blog-nav a:hover {
     background: var(--vp-accent);
     color: #fff !important;
+}
+.vp-blog-nav-secondary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+}
+.vp-blog-nav-secondary a {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--vp-muted) !important;
+    text-decoration: none !important;
+    padding: 0.3em 0.6em;
+    transition: color 0.2s;
+}
+.vp-blog-nav-secondary a:hover {
+    color: var(--vp-accent) !important;
 }
 
 .blog .site-main,
@@ -1476,6 +1512,74 @@ input:focus, textarea:focus {
     .vp-vid-grid {
         grid-template-columns: 1fr;
         gap: 1.2rem;
+    }
+}
+
+/* ---- About Us page (page-id-471) ---- */
+.page-id-471 .entry-content {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #3a3a3a;
+}
+.page-id-471 .entry-content h2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.6rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 2.5rem 0 1rem 0 !important;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+.page-id-471 .entry-content h2:first-of-type {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 1rem !important;
+}
+.page-id-471 .entry-content .vp-about-img-right {
+    float: right;
+    margin: 0.3rem 0 1rem 1.5rem;
+    max-width: 280px;
+    border-radius: 6px;
+}
+.page-id-471 .entry-content .vp-about-img-left {
+    float: left;
+    margin: 0.3rem 1.5rem 1rem 0;
+    max-width: 280px;
+    border-radius: 6px;
+}
+.page-id-471 .entry-content .vp-about-img-center {
+    display: block;
+    margin: 1.5rem auto;
+    max-width: 400px;
+    border-radius: 6px;
+}
+.page-id-471 .entry-content .vp-about-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.5rem;
+    margin: 1.5rem 0;
+    clear: both;
+}
+.page-id-471 .entry-content .vp-about-gallery img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.page-id-471 .entry-content .clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+@media (max-width: 600px) {
+    .page-id-471 .entry-content .vp-about-img-right,
+    .page-id-471 .entry-content .vp-about-img-left {
+        float: none;
+        display: block;
+        margin: 1rem auto;
+        max-width: 100%;
     }
 }
 
