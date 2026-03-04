@@ -915,7 +915,9 @@ input:focus, textarea:focus {
 }
 .vp-sermon-plain {
     border-left: none;
-    border-radius: var(--vp-radius);
+    border-right: 4px solid var(--vp-accent);
+    border-radius: var(--vp-radius) 0 0 var(--vp-radius);
+    padding: 1.5rem 2.5rem 1.5rem 2rem;
 }
 .vp-sermon-plain::before {
     content: none;
