@@ -627,20 +627,16 @@ input:focus, textarea:focus {
     }
 }
 
-/* ---------- Blog Listing ---------- */
+/* ---------- Blog Listing — Card Grid ---------- */
+
+/* Single article pages — default stacked styling */
 .site-main > article {
     padding-bottom: 2rem !important;
     margin-bottom: 2rem !important;
     border-bottom: 1px solid #eee !important;
 }
-
 .site-main > article:last-of-type {
     border-bottom: none !important;
-}
-
-/* Sticky post highlight */
-.site-main > article.sticky {
-    border-bottom: 2px solid var(--vp-accent) !important;
 }
 
 /* Post title */
@@ -648,59 +644,22 @@ input:focus, textarea:focus {
     font-size: 1.4rem !important;
     margin-bottom: 0.4rem !important;
 }
-
 .site-main > article .entry-title a {
     color: var(--vp-heading) !important;
     transition: color 0.2s !important;
 }
-
 .site-main > article .entry-title a:hover {
     color: var(--vp-accent) !important;
 }
 
-/* Featured image in blog listing */
-.site-main > article .post-image {
-    margin-bottom: 1rem !important;
-    overflow: hidden;
-    border-radius: var(--vp-radius);
-}
-
-.site-main > article .post-image img {
-    width: 100% !important;
-    height: auto !important;
-    max-height: 350px !important;
-    object-fit: cover !important;
-    border-radius: var(--vp-radius) !important;
-}
-
-/* Entry content in blog listing */
-.blog .site-main > article > .inside-article > .entry-content,
-.archive .site-main > article > .inside-article > .entry-content {
-    font-size: 0.9rem !important;
-    color: #555 !important;
-    line-height: 1.6 !important;
-    max-height: none !important;
-}
-
-/* Single page entry content — consistent body text */
+/* Single page entry content */
 .site-main > article > .inside-article > .entry-content {
     font-size: 0.95rem;
     line-height: 1.7;
     max-height: none !important;
 }
-
 .site-main > article > .inside-article > .entry-content p {
     margin-bottom: 0.6em !important;
-}
-
-/* Blog listing images (inline in excerpts) — scoped to blog/archive pages only */
-.blog .site-main > article > .inside-article > .entry-content img,
-.archive .site-main > article > .inside-article > .entry-content img {
-    max-width: 200px !important;
-    height: auto !important;
-    float: right !important;
-    margin: 0 0 0.8rem 1rem !important;
-    border-radius: var(--vp-radius) !important;
 }
 
 /* Entry meta (categories/tags) */
@@ -710,7 +669,6 @@ input:focus, textarea:focus {
     font-size: 0.75rem !important;
     color: var(--vp-muted) !important;
 }
-
 .site-main > article .entry-meta .cat-links a,
 .site-main > article .entry-meta .tags-links a {
     display: inline-block;
@@ -723,29 +681,145 @@ input:focus, textarea:focus {
     letter-spacing: 0.04em !important;
     margin-right: 0.3em;
 }
-
 .site-main > article .entry-meta .cat-links a:hover,
 .site-main > article .entry-meta .tags-links a:hover {
     background: var(--vp-accent) !important;
     color: #fff !important;
 }
-
 .site-main > article .entry-meta .screen-reader-text {
     display: none;
 }
 
-/* Pagination */
-.paging-navigation {
-    margin-top: 1.5rem !important;
+/* ---- Blog listing pages: card grid layout ---- */
+.blog .site-main,
+.archive .site-main {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 1.5rem !important;
+}
+
+.blog .site-main > article,
+.archive .site-main > article {
+    background: #fff !important;
+    border: 1px solid #eee !important;
+    border-bottom: 1px solid #eee !important;
+    border-radius: 6px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.blog .site-main > article:hover,
+.archive .site-main > article:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* Sticky post */
+.blog .site-main > article.sticky {
+    border: 2px solid var(--vp-accent) !important;
+}
+
+/* Inside article — padding for text content */
+.blog .site-main > article > .inside-article,
+.archive .site-main > article > .inside-article {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Featured image — card header */
+.blog .site-main > article .post-image,
+.archive .site-main > article .post-image {
+    margin: 0 !important;
+    border-radius: 0 !important;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.blog .site-main > article .post-image img,
+.archive .site-main > article .post-image img {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 3 / 2 !important;
+    object-fit: cover !important;
+    border-radius: 0 !important;
+    display: block !important;
+}
+
+/* Entry header — padding inside card */
+.blog .site-main > article .entry-header,
+.archive .site-main > article .entry-header {
+    padding: 1rem 1.2rem 0 !important;
+}
+.blog .site-main > article .entry-title,
+.archive .site-main > article .entry-title {
+    font-size: 1.15rem !important;
+    line-height: 1.3 !important;
+    margin-bottom: 0.3rem !important;
+}
+
+/* Entry content — truncated excerpt */
+.blog .site-main > article > .inside-article > .entry-content,
+.archive .site-main > article > .inside-article > .entry-content {
+    padding: 0 1.2rem !important;
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    line-height: 1.55 !important;
+    max-height: 4.8em !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+.blog .site-main > article > .inside-article > .entry-content::after,
+.archive .site-main > article > .inside-article > .entry-content::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2em;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), #fff);
+}
+
+/* Hide inline images in blog card excerpts */
+.blog .site-main > article > .inside-article > .entry-content img,
+.archive .site-main > article > .inside-article > .entry-content img {
+    display: none !important;
+}
+
+/* Hide h1 inside blog excerpt (some posts have h1 in content) */
+.blog .site-main > article > .inside-article > .entry-content h1,
+.archive .site-main > article > .inside-article > .entry-content h1 {
+    display: none !important;
+}
+
+/* Entry meta inside card */
+.blog .site-main > article .entry-meta,
+.archive .site-main > article .entry-meta {
+    padding: 0.6rem 1.2rem 1rem !important;
+    margin-top: auto !important;
+    border-top: none !important;
+}
+
+/* Pagination — spans full grid width */
+.blog .paging-navigation,
+.archive .paging-navigation {
+    grid-column: 1 / -1 !important;
+    margin-top: 1rem !important;
     padding-top: 1.5rem !important;
     border-top: 1px solid #eee !important;
     text-align: center !important;
 }
-
 .paging-navigation .nav-links {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .blog .site-main,
+    .archive .site-main {
+        grid-template-columns: 1fr !important;
+    }
 }
 
 /* ---------- Travel Page Images ---------- */
@@ -1052,6 +1126,193 @@ input:focus, textarea:focus {
     .vp-gallery-item img {
         height: 140px;
     }
+}
+
+/* ==========================================================================
+   Magazine Editorial Layout
+   ========================================================================== */
+
+/* Magazine page — full width, no sidebar */
+.page-id-22 .content-area {
+    max-width: 1100px !important;
+    width: 100% !important;
+}
+.page-id-22 #right-sidebar { display: none !important; }
+.page-id-22 #primary {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Hero section */
+.vp-mag-hero {
+    position: relative;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    margin-top: -2rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    border-radius: 0;
+}
+.vp-mag-hero img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+}
+.vp-mag-hero-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem 2.5rem 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 70%, transparent 100%);
+}
+.vp-mag-hero-overlay .vp-mag-tag {
+    margin-bottom: 0.6rem;
+}
+.vp-mag-hero-overlay h2 {
+    color: #fff !important;
+    font-size: 2rem !important;
+    margin-bottom: 0.4rem !important;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+    line-height: 1.2 !important;
+}
+.vp-mag-hero-overlay p {
+    color: rgba(255,255,255,0.85);
+    font-size: 1rem;
+    margin: 0;
+    max-width: 600px;
+}
+@media (max-width: 768px) {
+    .vp-mag-hero img { height: 280px; }
+    .vp-mag-hero-overlay { padding: 2rem 1.2rem 1.5rem; }
+    .vp-mag-hero-overlay h2 { font-size: 1.5rem !important; }
+    .vp-mag-hero { width: calc(100% + 2rem); margin-left: -1rem; margin-top: -1.2rem; }
+}
+
+/* Category tag pill */
+.vp-mag-tag {
+    display: inline-block;
+    background: var(--vp-accent);
+    color: #fff !important;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 0.2em 0.6em;
+    border-radius: 3px;
+    line-height: 1.4;
+}
+.vp-mag-tag--green { background: var(--vp-secondary); }
+.vp-mag-tag--dark { background: var(--vp-heading); }
+
+/* Section title */
+.vp-mag-section-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 3rem 0 0.3rem 0 !important;
+    padding-bottom: 0 !important;
+}
+.vp-mag-section-sub {
+    font-size: 0.88rem;
+    color: var(--vp-muted);
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+/* Featured row — 3 large cards */
+.vp-mag-featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+.vp-mag-featured .vp-mag-card img {
+    aspect-ratio: 4 / 3;
+}
+@media (max-width: 768px) {
+    .vp-mag-featured {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+}
+
+/* Card grid */
+.vp-mag-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+    .vp-mag-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Individual card */
+.vp-mag-card {
+    display: block;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: box-shadow 0.25s, transform 0.25s;
+}
+.vp-mag-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+.vp-mag-card img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    display: block;
+    border-radius: 0 !important;
+}
+.vp-mag-card-body {
+    padding: 1rem 1.2rem 1.2rem;
+}
+.vp-mag-card-body .vp-mag-tag {
+    margin-bottom: 0.5rem;
+}
+.vp-mag-card-body h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 0 0 0.35rem 0 !important;
+    line-height: 1.3 !important;
+}
+.vp-mag-card-body p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Card without image */
+.vp-mag-card--no-img .vp-mag-card-body {
+    padding-top: 1.5rem;
+}
+
+/* Two-column watch row */
+.vp-mag-watch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+@media (max-width: 600px) {
+    .vp-mag-watch { grid-template-columns: 1fr; }
 }
 
 /* ---------- Utility ---------- */
