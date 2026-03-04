@@ -1707,10 +1707,10 @@ input:focus, textarea:focus {
 .page-id-471 .entry-title {
     font-family: 'Playfair Display', Georgia, serif !important;
     text-align: center !important;
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
     font-weight: 500 !important;
     color: var(--vp-heading) !important;
-    margin-bottom: 0.5rem !important;
+    margin-bottom: 0.6em !important;
 }
 .page-id-471 .entry-content {
     max-width: 800px;
@@ -1721,7 +1721,7 @@ input:focus, textarea:focus {
 }
 .page-id-471 .entry-content h2 {
     font-family: 'Playfair Display', Georgia, serif !important;
-    font-size: 1.6rem !important;
+    font-size: 1.4rem !important;
     font-weight: 500 !important;
     color: var(--vp-heading) !important;
     margin: 2.5rem 0 1rem 0 !important;
