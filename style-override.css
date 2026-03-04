@@ -604,10 +604,18 @@ input:focus, textarea:focus {
 }
 
 /* Entry content in blog listing */
-.site-main > article > .inside-article > .entry-content {
+.blog .site-main > article > .inside-article > .entry-content,
+.archive .site-main > article > .inside-article > .entry-content {
     font-size: 0.9rem !important;
     color: #555 !important;
     line-height: 1.6 !important;
+    max-height: none !important;
+}
+
+/* Single page entry content — consistent body text */
+.site-main > article > .inside-article > .entry-content {
+    font-size: 0.95rem;
+    line-height: 1.7;
     max-height: none !important;
 }
 
