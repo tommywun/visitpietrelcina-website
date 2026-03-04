@@ -1748,6 +1748,158 @@ input:focus, textarea:focus {
     }
 }
 
+/* ---- Single blog post pages ---- */
+.single-post .content-area {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+.single-post #right-sidebar {
+    display: none !important;
+}
+/* Clean page header area */
+.single-post .page-header-content {
+    display: none !important;
+}
+/* Blog post header bar */
+.vp-post-header {
+    text-align: center;
+    padding: 1.5rem 1rem 1rem;
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+}
+.vp-post-header-icon {
+    width: 60px;
+    height: auto;
+    margin: 0 auto 0.5rem;
+    display: block;
+    opacity: 0.85;
+}
+.vp-post-header-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+}
+.vp-post-header-nav a {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--vp-muted) !important;
+    text-decoration: none !important;
+    padding: 0.3em 0.7em;
+    transition: color 0.2s;
+}
+.vp-post-header-nav a:hover {
+    color: var(--vp-accent) !important;
+}
+.vp-post-header-nav a.vp-post-nav-back {
+    color: var(--vp-accent) !important;
+    font-weight: 700;
+}
+/* Entry title */
+.single-post .entry-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    text-align: center !important;
+    max-width: 700px;
+    margin: 1.5rem auto 0.5rem !important;
+    line-height: 1.25 !important;
+}
+/* Category tag under title */
+.single-post .entry-meta .cat-links {
+    display: block;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+.single-post .entry-meta .cat-links a {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff !important;
+    background: var(--vp-accent);
+    padding: 0.25em 0.7em;
+    border-radius: 3px;
+    text-decoration: none !important;
+    margin: 0 0.2rem;
+}
+/* Featured image — cleaner */
+.single-post .post-image {
+    max-width: 700px;
+    margin: 0 auto 1.5rem !important;
+}
+.single-post .post-image img {
+    width: 100%;
+    border-radius: 6px !important;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+/* Entry content — readable width */
+.single-post .entry-content {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #3a3a3a;
+}
+.single-post .entry-content p {
+    margin-bottom: 1.2em;
+}
+.single-post .entry-content img {
+    border-radius: 6px;
+    max-width: 100%;
+    height: auto;
+}
+/* Hide print/PDF buttons */
+.single-post .pmb-print-this-page,
+.single-post .entry-content .wp-block-button {
+    display: none !important;
+}
+/* Entry footer meta */
+.single-post footer.entry-meta {
+    max-width: 700px;
+    margin: 2rem auto 0 !important;
+    padding-top: 1.5rem !important;
+    border-top: 1px solid #eee !important;
+    font-size: 0.85rem;
+    text-align: center;
+}
+.single-post footer.entry-meta .tags-links {
+    display: block;
+    margin-top: 0.3rem;
+}
+/* Post navigation — clean */
+.single-post .post-navigation {
+    max-width: 700px;
+    margin: 1.5rem auto !important;
+    padding: 1rem 0 !important;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+}
+.single-post .post-navigation .nav-previous,
+.single-post .post-navigation .nav-next {
+    max-width: 45%;
+}
+.single-post .post-navigation a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--vp-accent) !important;
+    text-decoration: none !important;
+}
+.single-post .post-navigation a:hover {
+    text-decoration: underline !important;
+}
+.single-post .post-navigation .prev::before { content: '\2190  '; }
+.single-post .post-navigation .next::after { content: '  \2192'; }
+
 /* ---------- Utility ---------- */
 * { scroll-behavior: smooth; }
 
