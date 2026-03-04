@@ -892,6 +892,49 @@ input:focus, textarea:focus {
     font-size: 0.9rem;
 }
 
+/* ---------- Sermon Blockquote ---------- */
+.vp-sermon {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem 1.5rem 2.5rem;
+    background: #faf8f5;
+    border-left: 4px solid var(--vp-accent);
+    border-radius: 0 var(--vp-radius) var(--vp-radius) 0;
+    position: relative;
+}
+.vp-sermon::before {
+    content: "\201C";
+    position: absolute;
+    top: 0.2rem;
+    left: 0.6rem;
+    font-size: 3rem;
+    color: var(--vp-accent);
+    opacity: 0.3;
+    line-height: 1;
+    font-family: Georgia, serif;
+}
+.vp-sermon h3 {
+    margin-top: 1.5rem !important;
+    font-size: 1.15rem !important;
+    color: var(--vp-accent) !important;
+}
+.vp-sermon-heading {
+    font-size: 1.4rem !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 0.3rem !important;
+    color: var(--vp-heading) !important;
+}
+.vp-sermon-attribution {
+    font-size: 0.85rem;
+    color: var(--vp-muted);
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+@media (max-width: 600px) {
+    .vp-sermon {
+        padding: 1rem 1rem 1rem 1.5rem;
+    }
+}
+
 /* ---------- About Page Gallery ---------- */
 .vp-gallery {
     display: grid;
