@@ -1900,6 +1900,96 @@ input:focus, textarea:focus {
 .single-post .post-navigation .prev::before { content: '\2190  '; }
 .single-post .post-navigation .next::after { content: '  \2192'; }
 
+/* Post table-of-contents panel */
+.vp-post-toc {
+    max-width: 700px;
+    margin: 2rem auto;
+    padding: 1.5rem 2rem;
+    background: #faf8f5;
+    border-radius: 8px;
+    border: 1px solid #ece6de;
+}
+.vp-post-toc-top {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #e8e0d6;
+}
+.vp-post-toc-top img {
+    width: 40px;
+    height: auto;
+    opacity: 0.8;
+}
+.vp-post-toc-top h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 0 !important;
+}
+.vp-post-toc-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.3rem 2rem;
+}
+.vp-post-toc-columns a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.82rem;
+    color: #4a3728 !important;
+    text-decoration: none !important;
+    padding: 0.35rem 0;
+    transition: color 0.2s;
+}
+.vp-post-toc-columns a:hover {
+    color: var(--vp-accent) !important;
+}
+.vp-post-toc-columns a::before {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--dot);
+    flex-shrink: 0;
+}
+.vp-post-toc-columns .vp-toc-count {
+    font-size: 0.7rem;
+    color: var(--vp-muted);
+    margin-left: auto;
+}
+.vp-post-toc-links {
+    margin-top: 1rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid #e8e0d6;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.2rem;
+}
+.vp-post-toc-links a {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: var(--vp-accent) !important;
+    text-decoration: none !important;
+    font-weight: 500;
+}
+.vp-post-toc-links a:hover {
+    text-decoration: underline !important;
+}
+@media (max-width: 600px) {
+    .vp-post-toc-columns {
+        grid-template-columns: 1fr;
+    }
+    .vp-post-toc {
+        padding: 1.2rem 1rem;
+    }
+}
+
 /* ---------- Utility ---------- */
 * { scroll-behavior: smooth; }
 
