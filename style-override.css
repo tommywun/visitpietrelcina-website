@@ -925,8 +925,8 @@ input:focus, textarea:focus {
 .blog .site-main,
 .archive .site-main {
     display: grid !important;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
-    gap: 1.5rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    gap: 1rem !important;
 }
 
 .blog .site-main > article,
@@ -938,6 +938,7 @@ input:focus, textarea:focus {
     overflow: hidden !important;
     padding: 0 !important;
     margin: 0 !important;
+    max-width: 380px !important;
     transition: box-shadow 0.25s, transform 0.25s;
 }
 .blog .site-main > article:hover,
@@ -1114,6 +1115,10 @@ input:focus, textarea:focus {
     .blog .site-main,
     .archive .site-main {
         grid-template-columns: 1fr !important;
+    }
+    .blog .site-main > article,
+    .archive .site-main > article {
+        max-width: 100% !important;
     }
 }
 
@@ -2017,6 +2022,169 @@ input:focus, textarea:focus {
     }
     .vp-post-toc {
         padding: 1.2rem 1rem;
+    }
+}
+
+/* ---------- Stations of the Resurrection ---------- */
+.postid-1419 .content-area { width: 100% !important; max-width: 100% !important; }
+.postid-1419 #right-sidebar { display: none !important; }
+.postid-1419 .entry-content { max-width: 800px; margin: 0 auto; }
+.postid-1419 .entry-title {
+    font-family: 'Playfair Display', serif !important;
+    text-align: center !important;
+    font-size: 2.2rem !important;
+    color: var(--vp-heading) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.vp-station {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+.vp-station:last-child { border-bottom: none; }
+
+.vp-station-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--vp-accent);
+    line-height: 1;
+    min-width: 55px;
+    text-align: center;
+    flex-shrink: 0;
+    opacity: 0.6;
+}
+
+.vp-station-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.vp-station-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--vp-heading);
+    margin: 0.3rem 0 0.2rem;
+    line-height: 1.3;
+}
+
+.vp-station-img {
+    flex-shrink: 0;
+    width: 180px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.vp-station-img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.vp-station-intro {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 1rem;
+    color: var(--vp-muted);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Lightbox */
+.vp-lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.92);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.vp-lightbox-overlay.active { display: flex; }
+
+.vp-lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.vp-lightbox-caption {
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.vp-lightbox-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    font-family: sans-serif;
+    z-index: 100000;
+}
+.vp-lightbox-close:hover { opacity: 1; }
+
+.vp-lightbox-prev,
+.vp-lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    font-size: 2.5rem;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    padding: 1rem;
+    z-index: 100000;
+}
+.vp-lightbox-prev { left: 1rem; }
+.vp-lightbox-next { right: 1rem; }
+.vp-lightbox-prev:hover,
+.vp-lightbox-next:hover { opacity: 1; }
+
+.vp-lightbox-counter {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 600px) {
+    .vp-station {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .vp-station-img {
+        width: 220px;
+        order: -1;
+    }
+    .vp-station-num {
+        font-size: 2rem;
+        min-width: auto;
+    }
+    .vp-lightbox-prev,
+    .vp-lightbox-next {
+        font-size: 1.8rem;
+        padding: 0.5rem;
     }
 }
 
