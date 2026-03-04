@@ -1308,6 +1308,20 @@ input:focus, textarea:focus {
     padding-top: 1.5rem;
 }
 
+/* Video thumbnail mosaic on magazine card */
+.vp-vid-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    overflow: hidden;
+}
+.vp-vid-mosaic img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+}
+
 /* Two-column watch row */
 .vp-mag-watch {
     display: grid;
