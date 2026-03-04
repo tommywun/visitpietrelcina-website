@@ -719,11 +719,15 @@ input:focus, textarea:focus {
     display: block !important;
     padding: 0 !important;
     box-sizing: border-box !important;
+    float: none !important;
+    clear: both !important;
+    position: relative !important;
 }
 .vp-travel-map img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
+    float: none !important;
     border-radius: var(--vp-radius);
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
