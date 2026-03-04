@@ -5,7 +5,7 @@
   var lbCap = overlay.querySelector('figcaption');
   var close = overlay.querySelector('.vp-lightbox-close');
 
-  document.querySelectorAll('.entry-content .vp-travel-img img, .entry-content .vp-travel-map img').forEach(function(img){
+  document.querySelectorAll('.entry-content .vp-travel-img img, .entry-content .vp-travel-map img, .entry-content .vp-gallery-item img').forEach(function(img){
     img.addEventListener('click', function(e){
       e.preventDefault();
       var large = this.getAttribute('data-large') || this.src;

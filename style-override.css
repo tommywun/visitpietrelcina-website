@@ -838,7 +838,8 @@ input:focus, textarea:focus {
     opacity: 1;
 }
 .entry-content .vp-travel-img img,
-.entry-content .vp-travel-map img {
+.entry-content .vp-travel-map img,
+.entry-content .vp-gallery-item img {
     cursor: zoom-in;
 }
 
