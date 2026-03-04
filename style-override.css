@@ -703,6 +703,38 @@ input:focus, textarea:focus {
     font-style: italic;
 }
 
+/* Trenitalia booking callout */
+.vp-trenitalia-cta {
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 1.2rem;
+    background: #f9f7f4;
+    border-radius: var(--vp-radius);
+    border: 1px solid #e8e2da;
+}
+.vp-trenitalia-cta img {
+    display: block;
+    margin: 0 auto 0.8rem auto;
+    max-width: 160px;
+    height: auto;
+}
+.vp-trenitalia-cta .vp-book-btn {
+    display: inline-block;
+    background: #006633;
+    color: #fff !important;
+    padding: 0.7rem 2rem;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.vp-trenitalia-cta .vp-book-btn:hover {
+    background: #004d26;
+    text-decoration: none;
+    color: #fff !important;
+}
+
 /* Full-width map below intro */
 .vp-travel-map {
     margin: 1rem 0 2rem 0 !important;
