@@ -913,6 +913,13 @@ input:focus, textarea:focus {
     line-height: 1;
     font-family: Georgia, serif;
 }
+.vp-sermon-plain {
+    border-left: none;
+    border-radius: var(--vp-radius);
+}
+.vp-sermon-plain::before {
+    content: none;
+}
 .vp-sermon h3 {
     margin-top: 1.5rem !important;
     font-size: 1.15rem !important;
