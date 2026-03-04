@@ -262,6 +262,56 @@ button.menu-toggle {
     padding: 0.8rem 1.2rem !important;
 }
 
+/* ---------- Homepage Quick Links ---------- */
+.vp-quicklinks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+}
+.vp-quicklink {
+    display: block;
+    background: #faf8f5;
+    border: 1px solid #e8e2da;
+    border-radius: var(--vp-radius);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    text-decoration: none !important;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.vp-quicklink:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+.vp-quicklink h2 {
+    margin: 0 0 0.5rem 0 !important;
+    font-size: 1.3rem !important;
+    color: var(--vp-heading) !important;
+}
+.vp-quicklink p {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+.vp-quicklink .vp-quicklink-btn {
+    display: inline-block;
+    background: var(--vp-accent);
+    color: #fff !important;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+.vp-quicklink:hover .vp-quicklink-btn {
+    background: var(--vp-secondary);
+}
+@media (max-width: 600px) {
+    .vp-quicklinks {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* ---------- Content ---------- */
 .site.grid-container {
     max-width: 100% !important;
