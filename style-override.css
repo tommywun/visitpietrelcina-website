@@ -615,8 +615,9 @@ input:focus, textarea:focus {
     margin-bottom: 0.6em !important;
 }
 
-/* Blog listing images (inline in excerpts) */
-.site-main > article > .inside-article > .entry-content img {
+/* Blog listing images (inline in excerpts) — scoped to blog/archive pages only */
+.blog .site-main > article > .inside-article > .entry-content img,
+.archive .site-main > article > .inside-article > .entry-content img {
     max-width: 200px !important;
     height: auto !important;
     float: right !important;
@@ -872,6 +873,37 @@ input:focus, textarea:focus {
 .vp-contact-block p {
     margin-bottom: 0.4em;
     font-size: 0.9rem;
+}
+
+/* ---------- About Page Gallery ---------- */
+.vp-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.8rem;
+    margin: 1.5rem 0;
+}
+.vp-gallery-item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--vp-radius);
+}
+.vp-gallery-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: var(--vp-radius);
+    transition: transform 0.3s;
+}
+.vp-gallery-item img:hover {
+    transform: scale(1.03);
+}
+@media (max-width: 600px) {
+    .vp-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .vp-gallery-item img {
+        height: 140px;
+    }
 }
 
 /* ---------- Utility ---------- */
