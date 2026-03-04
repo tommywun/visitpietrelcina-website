@@ -353,10 +353,17 @@ button.menu-toggle {
     object-fit: cover !important;
 }
 .page-id-101 .entry-content div[style*="overflow"] h3 {
-    margin-top: 0 !important;
+    margin-top: 0.15rem !important;
+    margin-bottom: 0.35em !important;
 }
-.page-id-101 .entry-content div[style*="overflow"] p:first-of-type {
-    margin-top: 0 !important;
+.page-id-101 .entry-content div[style*="overflow"] p {
+    margin-bottom: 0.5em !important;
+}
+.page-id-101 .entry-content > h2 {
+    margin-bottom: 0.3em !important;
+}
+.page-id-101 .entry-content > h2 + p {
+    margin-bottom: 1.5rem !important;
 }
 
 /* ---------- Video Embeds ---------- */
