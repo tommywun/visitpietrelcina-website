@@ -1,5 +1,5 @@
 (function(){
-  var overlay, img, caption, counter, items, idx;
+  var overlay, lbImg, caption, counter, items, idx;
 
   function build(){
     overlay = document.createElement('div');
@@ -12,7 +12,7 @@
       '<div class="vp-lightbox-caption"></div>' +
       '<div class="vp-lightbox-counter"></div>';
     document.body.appendChild(overlay);
-    img = overlay.querySelector('.vp-lightbox-img');
+    lbImg = overlay.querySelector('.vp-lightbox-img');
     caption = overlay.querySelector('.vp-lightbox-caption');
     counter = overlay.querySelector('.vp-lightbox-counter');
     overlay.querySelector('.vp-lightbox-close').addEventListener('click', close);
@@ -29,8 +29,8 @@
 
   function show(i){
     idx = i;
-    img.src = items[i].src;
-    img.alt = items[i].alt;
+    lbImg.src = items[i].src;
+    lbImg.alt = items[i].alt;
     caption.textContent = items[i].alt;
     counter.textContent = (i+1) + ' / ' + items.length;
     overlay.classList.add('active');
@@ -45,18 +45,64 @@
   function prev(){ show((idx - 1 + items.length) % items.length); }
   function next(){ show((idx + 1) % items.length); }
 
-  document.addEventListener('DOMContentLoaded', function(){
-    var els = document.querySelectorAll('[data-lightbox]');
-    if(!els.length) return;
-    build();
-    items = [];
-    els.forEach(function(el, i){
-      items.push({ src: el.getAttribute('data-lightbox'), alt: el.getAttribute('data-caption') || '' });
-      el.addEventListener('click', function(e){
-        e.preventDefault();
-        show(i);
-      });
-      el.style.cursor = 'pointer';
+  function register(el, src, alt, clickTarget){
+    var i = items.length;
+    items.push({ src: src, alt: alt });
+    el.style.cursor = 'zoom-in';
+    (clickTarget || el).addEventListener('click', function(e){
+      e.preventDefault();
+      show(i);
     });
+  }
+
+  function isTiny(el){
+    var w = el.getAttribute('width'), h = el.getAttribute('height');
+    return (w && parseInt(w) < 80) || (h && parseInt(h) < 80);
+  }
+
+  function bestSrc(src){
+    // Strip WP thumbnail suffix to get full-size image
+    return src.replace(/-\d+x\d+(\.\w+)$/, '$1');
+  }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    items = [];
+    var registered = new Set();
+    var content = document.querySelector('.entry-content');
+
+    // 1. Explicit data-lightbox elements (e.g. stations page)
+    var explicit = document.querySelectorAll('[data-lightbox]');
+    explicit.forEach(function(el){
+      registered.add(el);
+      register(el, el.getAttribute('data-lightbox'), el.getAttribute('data-caption') || el.alt || '');
+    });
+
+    if(!content){ if(items.length) build(); return; }
+
+    // 2. Images wrapped in links to image files
+    var links = content.querySelectorAll('a[href]');
+    links.forEach(function(link){
+      var href = link.getAttribute('href') || '';
+      if(!/\.(jpe?g|png|gif|webp)(\?.*)?$/i.test(href)) return;
+      var img = link.querySelector('img');
+      if(!img || registered.has(img)) return;
+      if(isTiny(img)) return;
+      registered.add(img);
+      register(img, href, img.alt || '', link);
+    });
+
+    // 3. Standalone content images (not in links, not already registered)
+    var imgs = content.querySelectorAll('img');
+    imgs.forEach(function(el){
+      if(registered.has(el)) return;
+      if(el.closest('.vp-lightbox-overlay')) return;
+      if(el.closest('a[href]')) return;
+      if(isTiny(el)) return;
+      if(el.classList.contains('avatar') || el.classList.contains('emoji')) return;
+      registered.add(el);
+      register(el, bestSrc(el.src), el.alt || '');
+    });
+
+    if(items.length) build();
   });
 })();

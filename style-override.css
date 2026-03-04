@@ -1733,15 +1733,22 @@ input:focus, textarea:focus {
     padding-top: 0;
     margin-top: 1rem !important;
 }
+/* Paragraphs with images: flexbox for vertical centering */
+.page-id-471 .entry-content p:has(> .vp-about-img-right),
+.page-id-471 .entry-content p:has(> .vp-about-img-left) {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.2rem;
+}
 .page-id-471 .entry-content .vp-about-img-right {
-    float: right;
-    margin: 0.3rem 0 1rem 1.5rem;
+    order: 1;
+    flex-shrink: 0;
     max-width: 280px;
     border-radius: 6px;
 }
 .page-id-471 .entry-content .vp-about-img-left {
-    float: left;
-    margin: 0.3rem 1.5rem 1rem 0;
+    flex-shrink: 0;
     max-width: 280px;
     border-radius: 6px;
 }
@@ -1770,11 +1777,13 @@ input:focus, textarea:focus {
     clear: both;
 }
 @media (max-width: 600px) {
+    .page-id-471 .entry-content p:has(> .vp-about-img-right),
+    .page-id-471 .entry-content p:has(> .vp-about-img-left) {
+        flex-direction: column;
+    }
     .page-id-471 .entry-content .vp-about-img-right,
     .page-id-471 .entry-content .vp-about-img-left {
-        float: none;
-        display: block;
-        margin: 1rem auto;
+        order: 0;
         max-width: 100%;
     }
 }
