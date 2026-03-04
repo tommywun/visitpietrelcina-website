@@ -778,9 +778,25 @@ input:focus, textarea:focus {
     text-decoration: none !important;
     transition: background 0.2s, color 0.2s;
 }
+.vp-blog-nav a::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--dot, var(--vp-accent));
+    margin-right: 0.4em;
+    vertical-align: middle;
+    position: relative;
+    top: -0.5px;
+}
 .vp-blog-nav a:hover {
-    background: var(--vp-accent);
+    background: var(--dot, var(--vp-accent));
+    border-color: var(--dot, var(--vp-accent));
     color: #fff !important;
+}
+.vp-blog-nav a:hover::before {
+    background: #fff;
 }
 .vp-blog-nav-secondary {
     display: flex;
