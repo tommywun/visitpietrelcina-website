@@ -1704,6 +1704,14 @@ input:focus, textarea:focus {
 }
 
 /* ---- About Us page (page-id-471) ---- */
+.page-id-471 .entry-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    text-align: center !important;
+    font-size: 2.2rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin-bottom: 0.5rem !important;
+}
 .page-id-471 .entry-content {
     max-width: 800px;
     margin: 0 auto;
