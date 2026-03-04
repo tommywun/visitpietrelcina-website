@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6, .entry-title, .main-title {
 
 h1 { font-size: 2.2rem !important; margin-bottom: 0.6em !important; }
 h2 { font-size: 1.6rem !important; margin-bottom: 0.5em !important; }
-h3 { font-size: 1.25rem !important; margin-bottom: 0.4em !important; }
+h3 { font-size: 1.25rem !important; margin-top: 2.5rem !important; margin-bottom: 0.4em !important; }
 
 .entry-content h2 {
     margin-top: 2.5rem !important;
