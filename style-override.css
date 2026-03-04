@@ -1146,16 +1146,14 @@ input:focus, textarea:focus {
 /* Hero section */
 .vp-mag-hero {
     position: relative;
-    width: calc(100% + 3rem);
-    margin-left: -1.5rem;
-    margin-top: -2rem;
-    margin-bottom: 2.5rem;
+    max-width: 900px;
+    margin: 0 auto 2rem;
     overflow: hidden;
-    border-radius: 0;
+    border-radius: 8px;
 }
 .vp-mag-hero img {
     width: 100%;
-    height: 420px;
+    height: 300px;
     object-fit: cover;
     display: block;
 }
@@ -1164,30 +1162,29 @@ input:focus, textarea:focus {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 3rem 2.5rem 2rem;
+    padding: 2.5rem 2rem 1.5rem;
     background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 70%, transparent 100%);
 }
 .vp-mag-hero-overlay .vp-mag-tag {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.5rem;
 }
 .vp-mag-hero-overlay h2 {
     color: #fff !important;
-    font-size: 2rem !important;
-    margin-bottom: 0.4rem !important;
+    font-size: 1.7rem !important;
+    margin-bottom: 0.3rem !important;
     text-shadow: 0 1px 6px rgba(0,0,0,0.3);
     line-height: 1.2 !important;
 }
 .vp-mag-hero-overlay p {
     color: rgba(255,255,255,0.85);
-    font-size: 1rem;
+    font-size: 0.95rem;
     margin: 0;
-    max-width: 600px;
+    max-width: 500px;
 }
 @media (max-width: 768px) {
-    .vp-mag-hero img { height: 280px; }
-    .vp-mag-hero-overlay { padding: 2rem 1.2rem 1.5rem; }
-    .vp-mag-hero-overlay h2 { font-size: 1.5rem !important; }
-    .vp-mag-hero { width: calc(100% + 2rem); margin-left: -1rem; margin-top: -1.2rem; }
+    .vp-mag-hero img { height: 220px; }
+    .vp-mag-hero-overlay { padding: 1.5rem 1.2rem 1rem; }
+    .vp-mag-hero-overlay h2 { font-size: 1.3rem !important; }
 }
 
 /* Category tag pill */
