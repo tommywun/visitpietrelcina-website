@@ -803,6 +803,73 @@ input:focus, textarea:focus {
     color: var(--vp-accent) !important;
 }
 
+/* Blog category hub cards */
+.vp-blog-cat-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none !important;
+    transition: box-shadow 0.25s, transform 0.25s;
+    border-top: 3px solid var(--cat-color, #B8926A);
+}
+.vp-blog-cat-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+.vp-blog-cat-img {
+    aspect-ratio: 3/2;
+    overflow: hidden;
+}
+.vp-blog-cat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+.vp-blog-cat-card:hover .vp-blog-cat-img img {
+    transform: scale(1.03);
+}
+.vp-blog-cat-info {
+    padding: 0.8rem 1rem;
+}
+.vp-blog-cat-info h3 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 0 0 0.3rem 0 !important;
+}
+.vp-blog-cat-info p {
+    font-size: 0.85rem;
+    color: var(--vp-muted);
+    margin: 0;
+    line-height: 1.4;
+}
+.vp-blog-cat-card--wide {
+    grid-column: span 2;
+}
+.vp-blog-featured .vp-mag-card {
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    background: #fff;
+    transition: box-shadow 0.25s;
+}
+.vp-blog-featured .vp-mag-card:hover {
+    box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+}
+@media (max-width: 768px) {
+    .vp-blog-featured .vp-mag-card {
+        grid-template-columns: 1fr !important;
+    }
+    .vp-blog-cat-card--wide {
+        grid-column: span 1;
+    }
+}
+
 .blog .site-main,
 .archive .site-main {
     display: grid !important;
@@ -925,6 +992,98 @@ input:focus, textarea:focus {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+}
+
+/* Blog section headings — span full grid width */
+.vp-blog-section-heading {
+    grid-column: 1 / -1 !important;
+    margin: 1.5rem 0 0.3rem 0;
+    padding: 0;
+}
+.vp-blog-section-heading:first-child {
+    margin-top: 0;
+}
+.vp-blog-section-heading .vp-mag-section-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.4rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
+    margin: 0 !important;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid #e8e0d6;
+}
+
+/* Category colour accents on cards */
+.blog .site-main > article.category-meditations {
+    border-left: 3px solid #8E7CC3 !important;
+}
+.blog .site-main > article.category-rosarywalk {
+    border-left: 3px solid #6AA84F !important;
+}
+.blog .site-main > article.category-pietrelcina-town {
+    border-left: 3px solid #B8926A !important;
+}
+.blog .site-main > article.category-piana-romana {
+    border-left: 3px solid #E69138 !important;
+}
+.blog .site-main > article.category-festas {
+    border-left: 3px solid #CC4125 !important;
+}
+.blog .site-main > article.category-church-friary {
+    border-left: 3px solid #3D85C6 !important;
+}
+.blog .site-main > article.category-prayergarden {
+    border-left: 3px solid #93C47D !important;
+}
+.blog .site-main > article.category-life-stories {
+    border-left: 3px solid #A64D79 !important;
+}
+.blog .site-main > article.category-accommodation {
+    border-left: 3px solid #F1C40F !important;
+}
+.blog .site-main > article.category-blog {
+    border-left: 3px solid #76A5AF !important;
+}
+.blog .site-main > article.category-videos {
+    border-left: 3px solid #E06666 !important;
+}
+
+/* Section heading colour-coded underlines */
+.vp-blog-section-heading[data-cat="meditations"] .vp-mag-section-title { border-bottom-color: #8E7CC3; }
+.vp-blog-section-heading[data-cat="rosarywalk"] .vp-mag-section-title { border-bottom-color: #6AA84F; }
+.vp-blog-section-heading[data-cat="pietrelcina-town"] .vp-mag-section-title { border-bottom-color: #B8926A; }
+.vp-blog-section-heading[data-cat="piana-romana"] .vp-mag-section-title { border-bottom-color: #E69138; }
+.vp-blog-section-heading[data-cat="festas"] .vp-mag-section-title { border-bottom-color: #CC4125; }
+.vp-blog-section-heading[data-cat="church-friary"] .vp-mag-section-title { border-bottom-color: #3D85C6; }
+.vp-blog-section-heading[data-cat="prayergarden"] .vp-mag-section-title { border-bottom-color: #93C47D; }
+.vp-blog-section-heading[data-cat="life-stories"] .vp-mag-section-title { border-bottom-color: #A64D79; }
+.vp-blog-section-heading[data-cat="accommodation"] .vp-mag-section-title { border-bottom-color: #F1C40F; }
+.vp-blog-section-heading[data-cat="blog"] .vp-mag-section-title { border-bottom-color: #76A5AF; }
+.vp-blog-section-heading[data-cat="videos"] .vp-mag-section-title { border-bottom-color: #E06666; }
+
+/* First card after a section heading: feature it wider */
+.vp-blog-section-heading + article {
+    grid-column: 1 / -1 !important;
+}
+.vp-blog-section-heading + article > .inside-article {
+    flex-direction: row !important;
+    align-items: stretch;
+}
+.vp-blog-section-heading + article .post-image {
+    flex: 0 0 40% !important;
+    max-width: 40%;
+}
+.vp-blog-section-heading + article .entry-title {
+    font-size: 1.3rem !important;
+}
+@media (max-width: 768px) {
+    .vp-blog-section-heading + article > .inside-article {
+        flex-direction: column !important;
+    }
+    .vp-blog-section-heading + article .post-image {
+        flex: none !important;
+        max-width: 100%;
+    }
 }
 
 @media (max-width: 600px) {
