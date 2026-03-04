@@ -703,6 +703,12 @@ input:focus, textarea:focus {
     font-style: italic;
 }
 
+/* Naples: portrait photo — crop to match paragraph height */
+.vp-travel-img-naples img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
 /* Full-width map below intro */
 .vp-travel-map {
     margin: 1rem 0 2rem 0 !important;
