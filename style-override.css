@@ -351,6 +351,7 @@ button.menu-toggle {
     height: 200px !important;
     width: 280px !important;
     object-fit: cover !important;
+    border-radius: 6px !important;
 }
 .page-id-101 .entry-content div[style*="overflow"] h3 {
     margin-top: 0.15rem !important;
@@ -360,10 +361,25 @@ button.menu-toggle {
     margin-bottom: 0.5em !important;
 }
 .page-id-101 .entry-content > h2 {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.5rem !important;
+    font-weight: 500 !important;
+    color: var(--vp-heading) !important;
     margin-bottom: 0.3em !important;
 }
 .page-id-101 .entry-content > h2 + p {
+    margin-bottom: 2.5rem !important;
+    padding-bottom: 1.5rem !important;
+    border-bottom: 1px solid #eee !important;
+}
+/* Restaurant entries: card-like spacing */
+.page-id-101 .entry-content div[style*="overflow"] {
+    padding-bottom: 1.5rem !important;
     margin-bottom: 1.5rem !important;
+    border-bottom: 1px solid #f0f0f0 !important;
+}
+.page-id-101 .entry-content div[style*="overflow"]:last-of-type {
+    border-bottom: none !important;
 }
 
 /* ---------- Video Embeds ---------- */
