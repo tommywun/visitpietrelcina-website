@@ -194,7 +194,7 @@ body:not(.home) .page-header-image-single { display: none !important; }
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     color: #555 !important;
-    padding: 0 0.9rem !important;
+    padding: 0 1rem !important;
     line-height: 44px !important;
     transition: color 0.2s !important;
 }
