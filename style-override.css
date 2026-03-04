@@ -813,7 +813,7 @@ input:focus, textarea:focus {
     overflow: hidden;
     text-decoration: none !important;
     transition: box-shadow 0.25s, transform 0.25s;
-    border-top: 3px solid var(--cat-color, #B8926A);
+    position: relative;
 }
 .vp-blog-cat-card:hover {
     box-shadow: 0 6px 24px rgba(0,0,0,0.1);
@@ -822,6 +822,7 @@ input:focus, textarea:focus {
 .vp-blog-cat-img {
     aspect-ratio: 3/2;
     overflow: hidden;
+    position: relative;
 }
 .vp-blog-cat-img img {
     width: 100%;
@@ -831,6 +832,23 @@ input:focus, textarea:focus {
 }
 .vp-blog-cat-card:hover .vp-blog-cat-img img {
     transform: scale(1.03);
+}
+/* Category pill overlaid on image */
+.vp-blog-cat-pill {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #fff !important;
+    background: var(--cat-color, #B8926A);
+    padding: 0.3em 0.8em;
+    border-radius: 3px;
+    z-index: 1;
 }
 .vp-blog-cat-info {
     padding: 0.8rem 1rem;
@@ -999,6 +1017,9 @@ input:focus, textarea:focus {
     grid-column: 1 / -1 !important;
     margin: 1.5rem 0 0.3rem 0;
     padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 .vp-blog-section-heading:first-child {
     margin-top: 0;
@@ -1009,57 +1030,26 @@ input:focus, textarea:focus {
     font-weight: 500 !important;
     color: var(--vp-heading) !important;
     margin: 0 !important;
-    padding-bottom: 0.4rem;
-    border-bottom: 2px solid #e8e0d6;
+    padding: 0;
+    border: none;
 }
-
-/* Category colour accents on cards */
-.blog .site-main > article.category-meditations {
-    border-left: 3px solid #8E7CC3 !important;
+/* Bold colour dot before section heading */
+.vp-blog-section-heading::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--cat-color, #B8926A);
+    flex-shrink: 0;
 }
-.blog .site-main > article.category-rosarywalk {
-    border-left: 3px solid #6AA84F !important;
+/* Line after heading text */
+.vp-blog-section-heading::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: #e0dbd5;
 }
-.blog .site-main > article.category-pietrelcina-town {
-    border-left: 3px solid #B8926A !important;
-}
-.blog .site-main > article.category-piana-romana {
-    border-left: 3px solid #E69138 !important;
-}
-.blog .site-main > article.category-festas {
-    border-left: 3px solid #CC4125 !important;
-}
-.blog .site-main > article.category-church-friary {
-    border-left: 3px solid #3D85C6 !important;
-}
-.blog .site-main > article.category-prayergarden {
-    border-left: 3px solid #93C47D !important;
-}
-.blog .site-main > article.category-life-stories {
-    border-left: 3px solid #A64D79 !important;
-}
-.blog .site-main > article.category-accommodation {
-    border-left: 3px solid #F1C40F !important;
-}
-.blog .site-main > article.category-blog {
-    border-left: 3px solid #76A5AF !important;
-}
-.blog .site-main > article.category-videos {
-    border-left: 3px solid #E06666 !important;
-}
-
-/* Section heading colour-coded underlines */
-.vp-blog-section-heading[data-cat="meditations"] .vp-mag-section-title { border-bottom-color: #8E7CC3; }
-.vp-blog-section-heading[data-cat="rosarywalk"] .vp-mag-section-title { border-bottom-color: #6AA84F; }
-.vp-blog-section-heading[data-cat="pietrelcina-town"] .vp-mag-section-title { border-bottom-color: #B8926A; }
-.vp-blog-section-heading[data-cat="piana-romana"] .vp-mag-section-title { border-bottom-color: #E69138; }
-.vp-blog-section-heading[data-cat="festas"] .vp-mag-section-title { border-bottom-color: #CC4125; }
-.vp-blog-section-heading[data-cat="church-friary"] .vp-mag-section-title { border-bottom-color: #3D85C6; }
-.vp-blog-section-heading[data-cat="prayergarden"] .vp-mag-section-title { border-bottom-color: #93C47D; }
-.vp-blog-section-heading[data-cat="life-stories"] .vp-mag-section-title { border-bottom-color: #A64D79; }
-.vp-blog-section-heading[data-cat="accommodation"] .vp-mag-section-title { border-bottom-color: #F1C40F; }
-.vp-blog-section-heading[data-cat="blog"] .vp-mag-section-title { border-bottom-color: #76A5AF; }
-.vp-blog-section-heading[data-cat="videos"] .vp-mag-section-title { border-bottom-color: #E06666; }
 
 /* First card after a section heading: feature it wider */
 .vp-blog-section-heading + article {
