@@ -346,6 +346,19 @@ button.menu-toggle {
     height: auto !important;
 }
 
+/* Restaurant page: uniform image sizing + text alignment */
+.page-id-101 .entry-content img[style*="float"] {
+    height: 200px !important;
+    width: 280px !important;
+    object-fit: cover !important;
+}
+.page-id-101 .entry-content div[style*="overflow"] h3 {
+    margin-top: 0 !important;
+}
+.page-id-101 .entry-content div[style*="overflow"] p:first-of-type {
+    margin-top: 0 !important;
+}
+
 /* ---------- Video Embeds ---------- */
 .embed-youtube,
 .wp-block-embed__wrapper {
